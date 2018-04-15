@@ -1,4 +1,4 @@
-项目名称: Oracle HA双机+Keepalived实现高可用
+Oracle HA双机+Keepalived实现高可用
     
     使用Keepalived管理Oracle双机集群实现业务的高可用
 
