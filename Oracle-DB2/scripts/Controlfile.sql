@@ -1,0 +1,1 @@
+RESTORE CONTROLFILE FROM '/oradata/HMODB/control01.ctl';
