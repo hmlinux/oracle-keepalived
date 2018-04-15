@@ -1,0 +1,2609 @@
+
+-------------------------------------------------------------------------------
+Apr  14 21:29:33 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 21:29:33 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 21:29:33 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 21:29:33 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 21:29:33 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 21:29:33 Sat hmdg-db1 [keepalived_notify]: mount: /dev/sdb1 is already mounted on /oradata
+Apr  14 21:29:33 Sat hmdg-db1 [keepalived_notify]: a database already open by the instance.
+Apr  14 21:29:33 Sat hmdg-db1 [keepalived_notify]: start listener...
+Apr  14 21:29:33 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:29:36 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 21:29:36 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 21:29:36 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 21:29:36 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 21:29:36 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404212936';
+
+
+Database altered.
+
+Apr  14 21:29:36 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+Apr  14 21:29:44 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 21:29:44 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 21:29:44 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 21:29:44 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 21:29:46 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:31:04 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 21:31:04 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 21:31:04 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 21:31:04 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 21:31:04 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 21:31:04 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 21:31:04 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 21:31:05 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 21:31:07 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 21:31:11 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 21:31:18 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 21:31:18 Sat hmdg-db1 [keepalived_notify]: start listener...
+Apr  14 21:31:18 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:31:27 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 21:31:27 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 21:31:27 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 21:31:27 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 21:31:27 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404213127';
+
+
+Database altered.
+
+Apr  14 21:31:28 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+Apr  14 21:31:35 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 21:31:35 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 21:31:35 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 21:31:35 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 21:31:36 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:32:31 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 21:32:31 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 21:32:37 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 21:32:37 Sat hmdg-db1 [keepalived_notify]: /oradata is no mount
+Apr  14 21:32:37 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 21:32:37 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:35:25 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 21:35:25 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 21:35:25 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 21:35:25 Sat hmdg-db1 [keepalived_notify]: /oradata is no mount
+Apr  14 21:35:25 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 21:35:25 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:35:28 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 21:35:28 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 21:35:28 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 21:35:28 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 21:35:28 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 21:35:28 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 21:35:28 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 21:35:31 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 21:35:33 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 21:35:37 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 21:35:44 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 21:35:44 Sat hmdg-db1 [keepalived_notify]: start listener...
+Apr  14 21:35:44 Sat hmdg-db1 [keepalived_notify]: The listener startup successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:36:36 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 21:36:36 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 21:36:36 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 21:36:36 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 21:36:36 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404213636';
+
+
+Database altered.
+
+Apr  14 21:36:36 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+Apr  14 21:36:43 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 21:36:43 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 21:36:43 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 21:36:43 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 21:36:44 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:36:44 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 21:36:44 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 21:36:44 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 21:36:44 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 21:36:45 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 21:36:45 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 21:36:45 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 21:36:45 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 21:36:47 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+-------------------------------------------------------------------------------
+Apr  14 21:36:50 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 21:36:50 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 21:36:50 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 21:36:51 Sat hmdg-db1 [keepalived_notify]: Database instance state is STARTED
+Apr  14 21:36:51 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+
+Database altered.
+
+Apr  14 21:36:51 Sat hmdg-db1 [keepalived_notify]: alter database to open
+    alter database open
+*
+ERROR at line 1:
+ORA-01012: not logged on
+Process ID: 0
+Session ID: 0 Serial number: 0
+
+
+Apr  14 21:36:52 Sat hmdg-db1 [keepalived_notify]: Database open failed
+ORA-01109: database not open
+
+
+Database dismounted.
+ORACLE instance shut down.
+Apr  14 21:36:56 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 21:36:56 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 21:36:56 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 21:36:56 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 21:36:56 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:41:09 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 21:41:09 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 21:41:09 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 21:41:09 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 21:41:09 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 21:41:09 Sat hmdg-db1 [keepalived_notify]: /oradata is no mount
+Apr  14 21:41:09 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 21:41:09 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:41:25 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 21:41:25 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 21:41:25 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 21:41:25 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 21:41:26 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 21:41:27 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [2]...
+Apr  14 21:41:28 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [3]...
+Apr  14 21:41:29 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [4]...
+Apr  14 21:41:30 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [5]...
+Apr  14 21:41:31 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [6]...
+Apr  14 21:41:32 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [7]...
+Apr  14 21:41:33 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 21:41:33 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 21:41:34 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 21:41:34 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 21:41:36 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 21:41:40 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 21:41:47 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 21:41:47 Sat hmdg-db1 [keepalived_notify]: start listener...
+Apr  14 21:41:47 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:45:07 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 21:45:07 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 21:45:07 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 21:45:08 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 21:45:08 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404214507';
+
+
+Database altered.
+
+Apr  14 21:45:08 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+Apr  14 21:45:15 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 21:45:15 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 21:45:15 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 21:45:15 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 21:45:16 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:45:30 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 21:45:30 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 21:45:30 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 21:45:30 Sat hmdg-db1 [keepalived_notify]: /oradata is no mount
+Apr  14 21:45:30 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 21:45:30 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:53:43 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 21:53:43 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 21:53:43 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 21:53:43 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 21:53:43 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 21:53:44 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [2]...
+Apr  14 21:53:46 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [3]...
+Apr  14 21:53:47 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [4]...
+Apr  14 21:53:48 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [5]...
+Apr  14 21:53:49 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [6]...
+Apr  14 21:53:50 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 21:53:50 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 21:53:50 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 21:53:51 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 21:53:53 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 21:53:57 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 21:54:04 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 21:54:04 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 21:54:04 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:56:06 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 21:56:06 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 21:56:06 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 21:56:06 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 21:56:06 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404215606';
+
+
+Database altered.
+
+Apr  14 21:56:07 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+Apr  14 21:56:14 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 21:56:14 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 21:56:14 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 21:56:14 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 21:56:18 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:56:29 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 21:56:29 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 21:56:29 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 21:56:29 Sat hmdg-db1 [keepalived_notify]: /oradata is no mount
+Apr  14 21:56:29 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 21:56:29 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 21:58:50 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 21:58:50 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 21:58:50 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 21:58:50 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 21:58:50 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 21:58:51 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [2]...
+Apr  14 21:58:52 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [3]...
+Apr  14 21:58:53 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [4]...
+Apr  14 21:58:55 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [5]...
+Apr  14 21:58:56 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [6]...
+Apr  14 21:58:57 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [7]...
+Apr  14 21:58:58 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [8]...
+Apr  14 21:58:59 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [9]...
+Apr  14 21:59:00 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [10]...
+Apr  14 21:59:01 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [11]...
+Apr  14 21:59:02 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [12]...
+Apr  14 21:59:04 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [13]...
+Apr  14 21:59:05 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [14]...
+Apr  14 21:59:06 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [15]...
+Apr  14 21:59:07 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [16]...
+Apr  14 21:59:08 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [17]...
+Apr  14 21:59:09 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 21:59:09 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 21:59:09 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 21:59:10 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 21:59:12 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+-------------------------------------------------------------------------------
+Apr  14 21:59:12 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 21:59:12 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 21:59:12 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 21:59:12 Sat hmdg-db1 [keepalived_notify]: Database instance state is STARTED
+Apr  14 21:59:12 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+    alter database mount
+*
+ERROR at line 1:
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Process ID: 104403
+Session ID: 1705 Serial number: 11
+
+
+Apr  14 21:59:14 Sat hmdg-db1 [keepalived_notify]: Database mount failed
+ORA-01507: database not mounted
+
+
+ORACLE instance shut down.
+Apr  14 21:59:18 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 21:59:18 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 21:59:18 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 21:59:18 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 21:59:18 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:01:28 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:01:28 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:01:28 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:01:28 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:01:28 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 22:01:29 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [2]...
+Apr  14 22:01:30 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [3]...
+Apr  14 22:01:31 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [4]...
+Apr  14 22:01:33 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [5]...
+Apr  14 22:01:34 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [6]...
+Apr  14 22:01:35 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [7]...
+Apr  14 22:01:36 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:01:36 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:01:36 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:01:39 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:01:41 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:01:45 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:01:52 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:01:52 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:01:52 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:03:18 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:03:18 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:03:18 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-01034: ORACLE not available
+ORA-27101: shared memory realm does not exist
+Linux-x86_64 Error: 2: No such file or directory
+Apr  14 22:03:18 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:03:18 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:03:18 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:03:18 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:03:21 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:04:41 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:04:41 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:04:41 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:04:41 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:04:43 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:04:43 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:04:43 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:04:44 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:04:45 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:04:50 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:04:58 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:04:58 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:04:58 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:08:42 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 22:08:42 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 22:08:42 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:08:42 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:08:42 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 22:08:42 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 22:08:42 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404220842';
+
+
+Database altered.
+
+Apr  14 22:08:42 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+Apr  14 22:08:48 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 22:08:48 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:08:48 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:08:48 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:08:48 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+ORACLE instance shut down.
+Apr  14 22:08:51 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 22:08:51 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:08:51 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:08:51 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:08:51 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+Apr  14 22:08:52 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:13:44 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:13:44 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:13:44 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:13:44 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:13:44 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:13:44 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:13:44 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:13:45 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:13:46 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:13:51 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:13:58 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:13:58 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:13:58 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:14:36 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 22:14:36 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 22:14:36 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:14:36 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:14:36 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 22:14:36 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 22:14:36 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404221436';
+
+
+Database altered.
+
+Apr  14 22:14:36 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+Apr  14 22:14:42 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 22:14:42 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:14:42 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:14:42 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:14:42 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+ORACLE instance shut down.
+Apr  14 22:14:43 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 22:14:43 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:14:43 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:14:43 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:14:43 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+Apr  14 22:14:44 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:15:47 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:15:47 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:15:47 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:15:47 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:15:47 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 22:15:48 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [2]...
+Apr  14 22:15:49 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [3]...
+Apr  14 22:15:50 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [4]...
+Apr  14 22:15:52 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [5]...
+Apr  14 22:15:53 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:15:53 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:15:53 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:15:54 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:15:55 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:16:00 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:16:07 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:16:07 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:16:07 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:19:25 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:19:25 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:19:25 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-01034: ORACLE not available
+ORA-27101: shared memory realm does not exist
+Linux-x86_64 Error: 2: No such file or directory
+Apr  14 22:19:25 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:19:25 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:19:25 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:19:25 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:19:30 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:19:36 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:19:36 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:19:36 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:19:36 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:19:36 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 22:19:37 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [2]...
+Apr  14 22:19:39 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [3]...
+Apr  14 22:19:40 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [4]...
+Apr  14 22:19:41 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [5]...
+Apr  14 22:19:42 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [6]...
+Apr  14 22:19:43 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [7]...
+Apr  14 22:19:44 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:19:44 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:19:44 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:19:45 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:19:47 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:19:51 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:19:59 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:19:59 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:19:59 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:24:12 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:24:12 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:24:12 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-01034: ORACLE not available
+ORA-27101: shared memory realm does not exist
+Linux-x86_64 Error: 2: No such file or directory
+Apr  14 22:24:12 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:24:12 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:24:12 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:24:12 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:24:14 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:28:38 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:28:38 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:28:38 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:28:38 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:28:38 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:28:38 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:28:38 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:28:43 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:28:45 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:28:49 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:28:56 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:28:56 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:28:56 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:30:14 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:30:14 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:30:14 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-01034: ORACLE not available
+ORA-27101: shared memory realm does not exist
+Linux-x86_64 Error: 2: No such file or directory
+Apr  14 22:30:14 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:30:14 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:30:14 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:30:14 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:30:14 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:30:23 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:30:23 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:30:23 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:30:23 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:30:23 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 22:30:24 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:30:24 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:30:24 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:30:25 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:30:27 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:30:31 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:30:38 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:30:38 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:30:38 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:32:11 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 22:32:11 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 22:32:11 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:32:11 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:32:11 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 22:32:11 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 22:32:11 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404223211';
+
+
+Database altered.
+
+Apr  14 22:32:11 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+Apr  14 22:32:17 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 22:32:17 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:32:17 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:32:17 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:32:17 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+ORACLE instance shut down.
+Apr  14 22:32:19 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 22:32:19 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:32:19 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:32:19 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:32:19 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+Apr  14 22:32:22 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:32:27 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:32:27 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:32:27 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:32:27 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:32:27 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:32:27 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:32:27 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:32:28 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:32:29 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:32:34 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:32:40 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:32:40 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:32:40 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:35:36 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 22:35:36 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 22:35:36 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:35:36 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:35:36 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 22:35:36 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 22:35:36 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404223536';
+
+
+Database altered.
+
+Apr  14 22:35:36 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+Apr  14 22:35:42 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 22:35:42 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:35:42 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:35:42 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:35:42 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+ORACLE instance shut down.
+Apr  14 22:35:44 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 22:35:44 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:35:44 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:35:44 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:35:44 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+Apr  14 22:35:45 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:40:16 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:40:16 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:40:16 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:40:16 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:40:16 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:40:17 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:40:17 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:40:17 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:40:19 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:40:24 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:40:30 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:40:30 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:40:30 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:40:58 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 22:40:58 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 22:40:58 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:40:58 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:40:58 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 22:40:58 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 22:40:58 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404224058';
+
+
+Database altered.
+
+Apr  14 22:40:58 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+Apr  14 22:41:04 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 22:41:04 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:41:04 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:41:04 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:41:04 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:41:04 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+ORACLE instance shut down.
+Apr  14 22:41:06 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 22:41:06 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:41:06 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:41:06 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:41:06 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:41:07 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:41:07 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:41:07 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:41:07 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:41:07 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:41:07 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:41:07 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:41:08 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:41:10 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:41:14 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:41:21 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:41:21 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:41:21 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:42:53 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 22:42:53 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 22:42:53 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:42:53 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:42:53 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 22:42:53 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 22:42:53 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404224253';
+
+
+Database altered.
+
+Apr  14 22:42:54 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+Apr  14 22:42:59 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 22:42:59 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:42:59 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:42:59 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:42:59 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:43:01 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+ORACLE instance shut down.
+Apr  14 22:43:02 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 22:43:02 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:43:02 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:43:02 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:43:02 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:43:09 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:43:09 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:43:09 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:43:09 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:43:09 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 22:43:10 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:43:10 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:43:10 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:43:11 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:43:13 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:43:17 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:43:24 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:43:24 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:43:24 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:44:27 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 22:44:27 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 22:44:28 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:44:28 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:44:28 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 22:44:28 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 22:44:28 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404224428';
+
+
+Database altered.
+
+Apr  14 22:44:28 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+Apr  14 22:44:33 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 22:44:34 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:44:34 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:44:34 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:44:34 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+ORACLE instance shut down.
+Apr  14 22:44:36 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 22:44:36 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:44:36 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:44:36 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:44:36 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+Apr  14 22:44:37 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:44:42 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:44:42 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:44:42 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:44:42 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:44:42 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 22:44:44 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [2]...
+Apr  14 22:44:45 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [3]...
+Apr  14 22:44:46 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [4]...
+Apr  14 22:44:47 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [5]...
+Apr  14 22:44:48 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [6]...
+Apr  14 22:44:49 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [7]...
+Apr  14 22:44:50 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [8]...
+Apr  14 22:44:51 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [9]...
+Apr  14 22:44:52 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [10]...
+Apr  14 22:44:54 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [11]...
+Apr  14 22:44:55 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [12]...
+Apr  14 22:44:56 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [13]...
+Apr  14 22:44:57 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [14]...
+Apr  14 22:44:58 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [15]...
+Apr  14 22:44:59 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [16]...
+Apr  14 22:45:01 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [17]...
+Apr  14 22:45:02 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [18]...
+Apr  14 22:45:03 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [19]...
+Apr  14 22:45:04 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [20]...
+Apr  14 22:45:04 Sat hmdg-db1 [keepalived_notify]: Disk status abnormal.
+
+-------------------------------------------------------------------------------
+Apr  14 22:46:22 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:46:22 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:46:22 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 22:46:22 Sat hmdg-db1 [keepalived_notify]: /oradata is no mount
+Apr  14 22:46:22 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:46:22 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:47:43 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:47:43 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:47:43 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:47:43 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:47:44 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:47:44 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:47:44 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:47:45 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:47:46 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:47:51 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:47:58 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:47:58 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:47:58 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:48:56 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 22:48:56 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 22:48:56 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:48:56 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:48:56 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 22:48:56 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 22:48:56 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404224856';
+
+
+Database altered.
+
+Apr  14 22:48:57 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+Apr  14 22:49:02 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 22:49:02 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:49:02 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:49:02 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:49:02 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+ORACLE instance shut down.
+Apr  14 22:49:04 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 22:49:04 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:49:04 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:49:04 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:49:04 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+Apr  14 22:49:07 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:50:07 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:50:07 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:50:07 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:50:07 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:50:07 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 22:50:08 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [2]...
+Apr  14 22:50:09 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [3]...
+Apr  14 22:50:10 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [4]...
+Apr  14 22:50:11 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [5]...
+Apr  14 22:50:12 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [6]...
+Apr  14 22:50:13 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [7]...
+Apr  14 22:50:15 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [8]...
+Apr  14 22:50:16 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:50:16 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:50:16 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:50:19 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:50:20 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:50:25 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:50:32 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:50:32 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:50:32 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:51:53 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:51:53 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:51:53 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-01034: ORACLE not available
+ORA-27101: shared memory realm does not exist
+Linux-x86_64 Error: 2: No such file or directory
+Apr  14 22:51:53 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:51:53 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:51:53 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:51:53 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:51:57 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:54:14 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 22:54:14 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 22:54:14 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:54:14 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:54:14 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 22:54:14 Sat hmdg-db1 [keepalived_notify]: /oradata is no mount
+Apr  14 22:54:14 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:54:14 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+Apr  14 22:54:20 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 22:54:20 Sat hmdg-db1 [keepalived_notify]: /oradata is no mount
+Apr  14 22:54:20 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:54:20 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:58:26 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:58:26 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:58:26 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:58:26 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:58:26 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:58:26 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:58:26 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:58:27 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:58:29 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:58:33 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:58:40 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:58:40 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:58:40 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:59:12 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 22:59:12 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 22:59:12 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 22:59:12 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 22:59:12 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 22:59:12 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 22:59:12 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404225912';
+
+
+Database altered.
+
+Apr  14 22:59:12 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Apr  14 22:59:18 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 22:59:18 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 22:59:18 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:59:18 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:59:18 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Database closed.
+Database dismounted.
+Apr  14 22:59:19 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+ORACLE instance shut down.
+Apr  14 22:59:20 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 22:59:20 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 22:59:20 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 22:59:20 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 22:59:20 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 22:59:26 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 22:59:26 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 22:59:26 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 22:59:26 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 22:59:26 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 22:59:28 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 22:59:28 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 22:59:28 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 22:59:28 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 22:59:30 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 22:59:34 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 22:59:41 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 22:59:41 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 22:59:41 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:03:08 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:03:08 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:03:08 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-01034: ORACLE not available
+ORA-27101: shared memory realm does not exist
+Linux-x86_64 Error: 2: No such file or directory
+Apr  14 23:03:08 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 23:03:08 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:03:09 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:03:09 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:03:13 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:04:35 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 23:04:35 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 23:04:35 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 23:04:35 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 23:04:35 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 23:04:36 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [2]...
+Apr  14 23:04:37 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [3]...
+Apr  14 23:04:38 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [4]...
+Apr  14 23:04:39 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [5]...
+Apr  14 23:04:40 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [6]...
+Apr  14 23:04:41 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [7]...
+Apr  14 23:04:42 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 23:04:42 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 23:04:43 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 23:04:43 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 23:04:45 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 23:04:49 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 23:04:56 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 23:04:56 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 23:04:56 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:06:25 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:06:25 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:06:25 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-01034: ORACLE not available
+ORA-27101: shared memory realm does not exist
+Linux-x86_64 Error: 2: No such file or directory
+Apr  14 23:06:25 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 23:06:25 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:06:25 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:06:25 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:06:29 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:08:36 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 23:08:36 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 23:08:36 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 23:08:36 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 23:08:36 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 23:08:36 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 23:08:36 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 23:08:37 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 23:08:39 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 23:08:43 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 23:08:50 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 23:08:50 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 23:08:50 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:10:08 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:10:08 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:10:08 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-01034: ORACLE not available
+ORA-27101: shared memory realm does not exist
+Linux-x86_64 Error: 2: No such file or directory
+Apr  14 23:10:08 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 23:10:08 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:10:08 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:10:08 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:10:09 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:10:17 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 23:10:17 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 23:10:17 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 23:10:17 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 23:10:17 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 23:10:18 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 23:10:18 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 23:10:19 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 23:10:22 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 23:10:23 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 23:10:28 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 23:10:35 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 23:10:35 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 23:10:35 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:11:31 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:11:31 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:11:31 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-01034: ORACLE not available
+ORA-27101: shared memory realm does not exist
+Linux-x86_64 Error: 2: No such file or directory
+Apr  14 23:11:31 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 23:11:31 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:11:31 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:11:31 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:11:35 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:11:41 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 23:11:41 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 23:11:41 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 23:11:41 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 23:11:41 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 23:11:42 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 23:11:42 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 23:11:42 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 23:11:43 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 23:11:45 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 23:11:49 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 23:11:56 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 23:11:56 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 23:11:56 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:08 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:13:08 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:08 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:13:08 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:13:08 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 23:13:08 Sat hmdg-db1 [keepalived_notify]: Database instance state is mounted
+Apr  14 23:13:08 Sat hmdg-db1 [keepalived_notify]: Backup current controlfile.
+
+SQL> alter database backup controlfile to '/backup/oracle/control/control_20181404231308';
+
+
+Database altered.
+
+Apr  14 23:13:08 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+Apr  14 23:13:15 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 23:13:15 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:13:15 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:13:15 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:13:20 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:24 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 23:13:24 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 23:13:24 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 23:13:24 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 23:13:24 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 23:13:25 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 23:13:25 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 23:13:25 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 23:13:26 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:28 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:13:28 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:13:28 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:28 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:13:28 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:13:28 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 23:13:28 Sat hmdg-db1 [keepalived_notify]: Database instance state is STARTED
+Apr  14 23:13:28 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:13:29 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+    alter database mount
+*
+ERROR at line 1:
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Process ID: 37086
+Session ID: 1705 Serial number: 11
+
+
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: Database mount failed
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: /oradata is no mount
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:13:30 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+ORA-01507: database not mounted
+
+
+ORACLE instance shut down.
+Apr  14 23:13:34 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 23:13:34 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:13:34 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:13:34 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:13:34 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:14:28 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 23:14:28 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 23:14:28 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 23:14:28 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 23:14:28 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 23:14:28 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 23:14:28 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 23:14:29 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 23:14:31 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+-------------------------------------------------------------------------------
+Apr  14 23:14:31 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:14:31 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 23:14:31 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:14:31 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:14:31 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 23:14:32 Sat hmdg-db1 [keepalived_notify]: Database instance state is STARTED
+Apr  14 23:14:32 Sat hmdg-db1 [keepalived_notify]: Shutdown database instance, please wait...
+
+-------------------------------------------------------------------------------
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:14:33 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+    alter database mount
+*
+ERROR at line 1:
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Process ID: 38698
+Session ID: 1705 Serial number: 11
+
+
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: Database mount failed
+
+-------------------------------------------------------------------------------
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-24324: service handle not initialized
+ORA-24323: value not allowed
+ORA-01089: immediate shutdown in progress - no operations are permitted
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: /oradata is no mount
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:14:34 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+ORA-01507: database not mounted
+
+
+ORACLE instance shut down.
+Apr  14 23:14:38 Sat hmdg-db1 [keepalived_notify]: Database instance shutdown successfully.
+
+Apr  14 23:14:38 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:14:38 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:14:38 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:14:38 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:15:18 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 23:15:18 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 23:15:18 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 23:15:18 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 23:15:18 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [1]...
+Apr  14 23:15:19 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [2]...
+Apr  14 23:15:20 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [3]...
+Apr  14 23:15:21 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [4]...
+Apr  14 23:15:22 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [5]...
+Apr  14 23:15:23 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 is already mounted on remote node or busy. checking [6]...
+Apr  14 23:15:25 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 23:15:25 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 23:15:25 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 23:15:25 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 23:15:27 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 23:15:31 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 23:15:39 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 23:15:39 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 23:15:39 Sat hmdg-db1 [keepalived_notify]: listener already started.
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:18:35 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:18:35 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 23:18:35 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:18:35 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:18:35 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+ORA-01034: ORACLE not available
+ORA-27101: shared memory realm does not exist
+Linux-x86_64 Error: 2: No such file or directory
+Apr  14 23:18:35 Sat hmdg-db1 [keepalived_notify]: Database instance not available.
+
+Apr  14 23:18:35 Sat hmdg-db1 [keepalived_notify]: umount sharedisk
+
+Apr  14 23:18:35 Sat hmdg-db1 [keepalived_notify]: umount /oradata success.
+Apr  14 23:18:35 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+
+-------------------------------------------------------------------------------
+Apr  14 23:18:36 Sat hmdg-db1 [keepalived_notify]: Transition to STOP STATE
+Apr  14 23:18:36 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+
+-------------------------------------------------------------------------------
+Apr  14 23:18:36 Sat hmdg-db1 [keepalived_notify]: Transition to BACKUP STATE
+Apr  14 23:18:36 Sat hmdg-db1 [keepalived_notify]: removing the VIP on eth1 for 172.16.10.130,172.16.10.131
+Apr  14 23:18:36 Sat hmdg-db1 [keepalived_notify]: Database Switchover To BACKUP
+Apr  14 23:18:36 Sat hmdg-db1 [keepalived_notify]: /oradata is no mount
+Apr  14 23:18:36 Sat hmdg-db1 [keepalived_notify]: stopping listener...
+Apr  14 23:18:36 Sat hmdg-db1 [keepalived_notify]: listener is not started.
+
+Apr  14 23:18:39 Sat hmdg-db1 [keepalived_notify]: The listener stop successfully
+
+
+-------------------------------------------------------------------------------
+Apr  14 23:19:39 Sat hmdg-db1 [keepalived_notify]: Transition to MASTER STATE
+Apr  14 23:19:39 Sat hmdg-db1 [keepalived_notify]: Setup the VIP on eth1 172.16.10.130,172.16.10.131
+Apr  14 23:19:39 Sat hmdg-db1 [keepalived_notify]: Database Switchover To MASTER
+Apr  14 23:19:39 Sat hmdg-db1 [keepalived_notify]: Check remote node sharedisk mounted.
+Apr  14 23:19:39 Sat hmdg-db1 [keepalived_notify]: /dev/sdb1 check passed.
+Apr  14 23:19:39 Sat hmdg-db1 [keepalived_notify]: mount /dev/sdb1 on /oradata
+Apr  14 23:19:39 Sat hmdg-db1 [keepalived_notify]: restore controlfile 1
+ORACLE instance started.
+
+Total System Global Area 1603411968 bytes
+Fixed Size		    2213776 bytes
+Variable Size		 1056966768 bytes
+Database Buffers	  536870912 bytes
+Redo Buffers		    7360512 bytes
+
+Recovery Manager: Release 11.2.0.1.0 - Production on Sat Apr 14 23:19:40 2018
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: HMODB (not mounted)
+using target database control file instead of recovery catalog
+
+RMAN> 
+Starting restore at 14-APR-18
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=572 device type=DISK
+
+channel ORA_DISK_1: copied control file copy
+output file name=/oradata/HMODB/control01.ctl
+output file name=/u01/app/oracle/flash_recovery_area/HMODB/control02.ctl
+output file name=/home/oracle/rman/HMODB/control03.ctl
+Finished restore at 14-APR-18
+
+RMAN> 
+
+Recovery Manager complete.
+Apr  14 23:19:42 Sat hmdg-db1 [keepalived_notify]: alter database to mount
+
+Database altered.
+
+Apr  14 23:19:46 Sat hmdg-db1 [keepalived_notify]: alter database to open
+
+Database altered.
+
+Apr  14 23:19:53 Sat hmdg-db1 [keepalived_notify]: Database opened.
+Apr  14 23:19:53 Sat hmdg-db1 [keepalived_notify]: Startup listener
+Apr  14 23:19:53 Sat hmdg-db1 [keepalived_notify]: starting listener...
+Apr  14 23:19:53 Sat hmdg-db1 [keepalived_notify]: The listener startup successfully
+
